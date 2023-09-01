@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Roboto&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary-bg :#2C3333;
+    --heading-txt:#CBE4DE;
+    --primary-txt:#95dede;
+    --animation:#16dddd;
+    --hover-node:#05f04b;
+    --animation-container:#1a1f1f;
+}
+body{
+    background-color: var(--primary-bg);
+    color:var(--primary-txt);
+    font-family:'Roboto',sans-serif;
+}
+
+h1,h3{
+    font-family:'Rajdhani', monospace;
+    color:var(--heading-txt);
+}
+h1{
+    text-align: center;
+    font-size:3rem;
+    margin-top:20px;
+}
+
+h3{
+    font-size:2rem;
+    margin-top:40px;
+    margin-bottom:20px;
+}
+
+a{
+    color:var(--primary-txt);
+    font-weight:100;
+    font-style: oblique;
+}
+
+
+section{
+    margin-inline:40px;
+}
+
+ul{
+    margin-left:40px;
+}
+
+/*Animation*/
+.animation-container{
+    margin-block:20px;
+    margin-inline:10%;
+    position:relative;
+    background-color: var(--animation-container);
+    border-radius:6px;
+    border:1px solid var(--animation);
+    min-height:300px;
+    /* adjust */
+}
+
+.node{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+    position:absolute;
+    width:3rem;height:3rem;
+    font-size:2rem;
+    border-radius:50%;
+    border:4px double var(--animation);
+    box-shadow:0 0 4px var(--animation);
+}
+
+.node:hover{
+    border-color:var(--hover-node);
+}
+
+.node:nth-child(1){
+    left:4%;
+    top:40%;
+}
+.node:nth-child(2){
+    left:25%;
+    top:5%;
+}
+.node:nth-child(3){
+    left:25%;
+    bottom:5%;
+}
+.node:nth-child(4){
+    right:25%;
+    top:5%;
+}
+.node:nth-child(5){
+    right:25%;
+    bottom:5%;
+}
+.node:nth-child(6){
+    right:5%;
+    top:40%;
+}
+
+.button-animation{
+    display:flex;
+    justify-content:center;
+    padding:10px;
+}
+button{
+    padding:8px;
+    background-color: var(--animation-container);
+    border: 5px double var(--animation);
+    border-radius:6px;
+    color:var(--primary-txt);
+    font-family:'Roboto',sans-serif;    
+    transition-property:hover active;
+    transition-duration: 0.1s;
+}
+
+button:hover{
+    box-shadow: 0 0 4px var(--animation);
+}
+button:active{
+    transform: scale(0.98,0.98);
+    color:grey;
+    border-color:grey;
+}
+button:disabled{
+    color:grey;
+    border-color:grey;
+}
+
+/* JavaScript elements */
+
+.line{
+    /* border:1px solid var(--animation); */
+    box-shadow:0 0 4px var(--animation);
+    position:absolute;
+}
+.line:hover{
+    border-color:var(--hover-node);
+}
+
+.weight{
+    font-size:1.2rem;
+    position:absolute;
+    color:var(--heading-txt)
+}
+
+
+/*media queries*/
+@media screen and (max-width:740px){
+    .animation-container{
+        margin-inline:20px;
+    }
+}
+
+
+@media screen and (max-width:570px){
+    section{
+        margin-inline:10px;
+    }
+    .animation-container{
+        margin-inline:0;
+    }
+}
+
+@media screen and (min-width:1024px){
+    body{
+        margin-inline:80px;
+    }
+}

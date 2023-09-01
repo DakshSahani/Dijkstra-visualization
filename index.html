@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dijktra's Algorithm</title>
+    <link rel="stylesheet" href="project1.css" />
+  </head>
+  <body>
+    <h1>Dijktra's Algorithm</h1>
+    <section class="theory">
+      <h3>Theory</h3>
+      <p>
+        Dijkstra's algorithm is a graph traversal algorithm that is used to find
+        the shortest path between two nodes in a weighted graph. It was
+        developed by Dutch computer scientist Edsger W. Dijkstra in 1956 and is
+        widely used in various applications, such as routing protocols in
+        computer networks and pathfinding in maps and navigation systems.
+    </p>
+      <p>
+          The algorithm works on a graph that consists of nodes (also called vertices)
+          and edges. Each edge has a weight or cost associated with it, which
+          represents the distance or cost of traversing from one node to another.
+          Dijkstra's algorithm aims to find the shortest path from a starting node
+          to all other nodes in the graph. It guarantees finding the shortest 
+          path when all edge weights are non-negative.
+      </p>
+    </section>
+
+    <section class="algo">
+      <h3>Algorithm</h3>
+      <a
+        href="https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/"
+        >Refer GFG</a
+      >
+      <p>Follow the steps below to solve the problem: <br /><br /></p>
+      <ul>
+        <li>
+          Create a set sptSet (shortest path tree set) that keeps track of
+          vertices included in the shortest-path tree, i.e., whose minimum
+          distance from the source is calculated and finalized. Initially, this
+          set is empty.
+        </li>
+
+        <li>
+          Assign a distance value to all vertices in the input graph. Initialize
+          all distance values as INFINITE. Assign the distance value as 0 for
+          the source vertex so that it is picked first. <br />
+          While sptSet doesn't include all vertices
+        </li>
+
+        <li>
+          Pick a vertex u which is not there in sptSet and has a minimum
+          distance value.
+        </li>
+
+        <li>Include u to sptSet.</li>
+
+        <li>
+          Then update distance value of all adjacent vertices of u. <br />
+          To update the distance values, iterate through all adjacent vertices.
+          <br />
+          For every adjacent vertex v, if the sum of the distance value of u
+          (from source) and weight of edge u-v, is less than the distance value
+          of v, then update the distance value of v.
+        </li>
+        <li>
+          Note: We use a boolean array sptSet[] to represent the set of vertices
+          included in SPT. If a value sptSet[v] is true, then vertex v is
+          included in SPT, otherwise not. Array dist[] is used to store the
+          shortest distance values of all vertices.
+        </li>
+      </ul>
+    </section>
+
+    <section class="animation">
+      <h3>Animation</h3>
+      <div class="animation-container">
+        <div class="node">1</div>
+        <div class="node">2</div>
+        <div class="node">3</div>
+        <div class="node">4</div>
+        <div class="node">5</div>
+        <div class="node">6</div>
+      </div>
+      <div class="button-animation">
+        <button id="start-animation">Start animation</button>
+      </div>
+      <div class="graph"></div>
+    </section>
+    <script src="project1.js"></script>
+  </body>
+</html>
